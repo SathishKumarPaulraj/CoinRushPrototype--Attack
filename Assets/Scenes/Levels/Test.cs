@@ -10,6 +10,7 @@ public class Test : MonoBehaviour
         Debug.Log("Test Script");
         Debug.Log("Test Chnages");
         Debug.Log("Test Change three ");
+        Debug.Log("Project Name Changed Attack ");
     }
 
     // Update is called once per frame
