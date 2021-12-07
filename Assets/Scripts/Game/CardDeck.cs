@@ -311,7 +311,7 @@ public class CardDeck : MonoBehaviour
     public List<Cards> _cardsThatCanBeReplacedByJoker;
     public int count = 0;
     public List<Cards> chk = new List<Cards>();
-
+    public GameObject _JokerAnimation;
 
     private void Start()
     {
@@ -319,6 +319,7 @@ public class CardDeck : MonoBehaviour
         canClick = true;
         DrawButton.sprite = drawNormal;
         mGameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _JokerAnimation = GameObject.Find("PlayerHandPointsParent");
     }
 
     private void DestroyCardList()
@@ -477,6 +478,8 @@ public class CardDeck : MonoBehaviour
     /// 
     private void DrawCard()
     {
+        _JokerAnimation.GetComponent<Animator>().enabled = true;
+
         if (_CardList.Count >= 8)
         {
             return;

@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class AnimationTest : MonoBehaviour
 {
 
-    public AnimationCurve _animationCurve
-        ;
+    public AnimationCurve _animationCurve;
+       
     private Vector3 initialValue;
     public float graphValue;
     public Sprite sprite1, sprite2;
@@ -29,7 +29,7 @@ public class AnimationTest : MonoBehaviour
     void Update()
     {
         graphValue = _animationCurve.Evaluate(Time.time);
-        transform.localScale = initialValue * graphValue;
+      //  transform.localScale = initialValue * graphValue;
         if (graphValue > .5)
         {
             this.GetComponent<Image>().sprite = sprite1;
@@ -37,7 +37,7 @@ public class AnimationTest : MonoBehaviour
         }
         else
         {
-            this.GetComponent<Image>().sprite = sprite2;
+            this.GetComponent<Image>().overrideSprite = null;
         }
     }
 }
